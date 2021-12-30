@@ -18,7 +18,7 @@ def opcion1():
     #print(response.text.encode('utf8'))
     orgs = response.json()
     for org in orgs:
-        if org['name']=='Devnet-GroupDelta':
+        if org['name']=='Devnet-GroupOmicron2':
             print("La organizacion ya existe, con ID")
             print(org['id'])
             id = (org['id'])
@@ -27,7 +27,7 @@ def opcion1():
     if crear==True:
         url = "https://api.meraki.com/api/v0/organizations"
         payload = '''{ 
-            "name": "Devnet-GroupDelta" 
+            "name": "Devnet-GroupOmicron2" 
         }'''
         headers = {
             "Content-Type": "application/json",
@@ -52,7 +52,7 @@ def opcion2():
     #print(response.text.encode('utf8'))
     orgs = response.json()
     for org in orgs:
-        if org['name']=='Devnet-GroupDelta':
+        if org['name']=='Devnet-GroupOmicron2':
             id = (org['id'])
 
     #formando la url
@@ -77,7 +77,7 @@ def opcion2():
     #print(response.text.encode('utf8'))
     networks = response.json()
     for network in networks:
-        if network['name']=='Network-Delta':
+        if network['name']=='Network-Omicron2':
             print(network['id'])
             id = (network['id'])
             borrar=input("La red ya existe, desea borrarla? (s/n)") 
@@ -96,7 +96,7 @@ def opcion2():
         
 #creando la network
     payload = '''{
-        "name": "Network-Delta",
+        "name": "Network-Omicron2",
         "timeZone": "America/Los_Angeles",
         "tags": " tag1 tag2 ",
         "disableMyMerakiCom": false,
